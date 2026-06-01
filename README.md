@@ -23,7 +23,7 @@
 
 ```bash
 # 1. リポジトリをクローン
-git clone <repository-url>
+git clone git@github.com:shige7ga/movigacha.git
 cd movigacha
 
 # 2. 起動（初回はイメージビルドあり）
