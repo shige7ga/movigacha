@@ -1,0 +1,40 @@
+<% content_for :title, "ムビガチャ - 結果発表！" %>
+
+<div class="max-w-xl mx-auto">
+  <div class="text-center mb-8">
+    <h1 class="text-3xl font-bold text-yellow-400">🎬 今日の一本はこれ！</h1>
+  </div>
+
+  <% if @movie %>
+    <div class="bg-gray-900 rounded-2xl p-8 shadow-xl mb-6 border border-yellow-400/30">
+      <h2 class="text-3xl font-bold text-white mb-6 text-center"><%= @movie.title %></h2>
+
+      <div class="flex flex-wrap gap-2 justify-center mb-6">
+        <span class="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full"><%= @movie.classification %></span>
+        <span class="bg-purple-600 text-white text-sm font-semibold px-3 py-1 rounded-full"><%= @movie.category %></span>
+        <span class="bg-green-600 text-white text-sm font-semibold px-3 py-1 rounded-full"><%= @movie.mood %></span>
+      </div>
+
+      <p class="text-gray-300 text-base leading-relaxed"><%= @movie.overview %></p>
+    </div>
+
+    <div class="space-y-3">
+      <%= link_to "🎲 もう一度回す",
+            result_path(@params),
+            class: "block w-full text-center bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg py-3 rounded-xl transition transform hover:scale-105 shadow-lg" %>
+      <%= link_to "🔙 条件を変える",
+            root_path,
+            class: "block w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold text-lg py-3 rounded-xl transition" %>
+    </div>
+  <% else %>
+    <div class="bg-gray-900 rounded-2xl p-10 shadow-xl text-center mb-6">
+      <p class="text-5xl mb-4">😢</p>
+      <p class="text-xl text-gray-300 font-semibold">その条件に合う映画が見つかりませんでした</p>
+      <p class="text-gray-500 mt-2">条件を変えてもう一度試してみてください</p>
+    </div>
+
+    <%= link_to "🔙 条件を変える",
+          root_path,
+          class: "block w-full text-center bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg py-3 rounded-xl transition transform hover:scale-105 shadow-lg" %>
+  <% end %>
+</div>

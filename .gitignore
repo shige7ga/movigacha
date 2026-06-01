@@ -1,0 +1,30 @@
+# 機密情報（追跡しない）
+.env
+config/master.key
+config/*.key
+
+# Rails
+*.log
+*.pid
+.bundle/
+/vendor/bundle
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/storage/*
+!/storage/.keep
+/public/assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# テスト
+/coverage
+
+# システム
+.DS_Store
+Thumbs.db

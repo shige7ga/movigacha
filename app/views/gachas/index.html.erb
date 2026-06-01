@@ -1,0 +1,39 @@
+<% content_for :title, "ムビガチャ - 今日は何を観よう？" %>
+
+<div class="max-w-xl mx-auto">
+  <div class="text-center mb-10">
+    <h1 class="text-4xl font-bold text-yellow-400 mb-3">🎲 ガチャを回そう！</h1>
+    <p class="text-gray-400 text-lg">気分・分類・カテゴリを選んで、今日の映画を決めよう</p>
+  </div>
+
+  <%= form_with url: result_path, method: :get, class: "bg-gray-900 rounded-2xl p-8 shadow-xl space-y-6" do |f| %>
+    <div>
+      <label class="block text-sm font-semibold text-gray-300 mb-2">映画の分類</label>
+      <%= f.select :classification,
+            [["指定なし", ""], *Movie::CLASSIFICATIONS],
+            {},
+            class: "w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" %>
+    </div>
+
+    <div>
+      <label class="block text-sm font-semibold text-gray-300 mb-2">カテゴリ</label>
+      <%= f.select :category,
+            [["指定なし", ""], *Movie::CATEGORIES],
+            {},
+            class: "w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" %>
+    </div>
+
+    <div>
+      <label class="block text-sm font-semibold text-gray-300 mb-2">今の気分</label>
+      <%= f.select :mood,
+            [["指定なし", ""], *Movie::MOODS],
+            {},
+            class: "w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" %>
+    </div>
+
+    <div class="pt-2">
+      <%= f.submit "🎰 ガチャを回す！",
+            class: "w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-xl py-4 rounded-xl cursor-pointer transition transform hover:scale-105 shadow-lg" %>
+    </div>
+  <% end %>
+</div>
