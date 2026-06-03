@@ -2,7 +2,7 @@
 
 <div class="max-w-xl mx-auto">
   <div class="text-center mb-8">
-    <h1 class="text-3xl font-bold text-yellow-400">🎬 今日の一本はこれ！</h1>
+    <h1 class="text-3xl font-bold text-yellow-400">今日の一本はこれ！</h1>
   </div>
 
   <% if @movie %>
@@ -19,21 +19,20 @@
     </div>
 
     <div class="space-y-3">
-      <%= link_to "🎲 もう一度回す",
+      <%= link_to "もう一度回す",
             result_path(@params),
             class: "block w-full text-center bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg py-3 rounded-xl transition transform hover:scale-105 shadow-lg" %>
-      <%= link_to "🔙 条件を変える",
+      <%= link_to "条件を変える",
             root_path,
             class: "block w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold text-lg py-3 rounded-xl transition" %>
     </div>
   <% else %>
     <div class="bg-gray-900 rounded-2xl p-10 shadow-xl text-center mb-6">
-      <p class="text-5xl mb-4">😢</p>
       <p class="text-xl text-gray-300 font-semibold">その条件に合う映画が見つかりませんでした</p>
       <p class="text-gray-500 mt-2">条件を変えてもう一度試してみてください</p>
     </div>
 
-    <%= link_to "🔙 条件を変える",
+    <%= link_to "条件を変える",
           root_path,
           class: "block w-full text-center bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg py-3 rounded-xl transition transform hover:scale-105 shadow-lg" %>
   <% end %>

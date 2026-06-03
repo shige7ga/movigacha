@@ -13,16 +13,19 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-gray-950 min-h-screen text-white">
+  <body class="bg-gray-950 min-h-screen text-white" style="font-family: 'Inter', 'Noto Sans JP', sans-serif;">
     <header class="bg-gray-900 shadow-lg py-4">
       <div class="container mx-auto px-4">
         <%= link_to root_path, class: "text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition" do %>
-          🎬 ムビガチャ
+          ムビガチャ
         <% end %>
       </div>
     </header>
