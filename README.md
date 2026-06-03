@@ -33,7 +33,7 @@ docker compose up --build
 open http://localhost:3000
 ```
 
-初回起動時に自動で `db:migrate` と `db:seed`（82件の映画データ）が実行されます。
+初回起動時に自動で `db:migrate` と `db:seed`（112件の映画データ）が実行されます。
 
 ### seedデータのリセット
 
