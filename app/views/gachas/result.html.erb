@@ -1,8 +1,24 @@
 <% content_for :title, "ムビガチャ - 結果発表！" %>
+<% content_for :head do %>
+  <meta name="turbo-cache-control" content="no-cache">
+<% end %>
 
 <div class="max-w-xl mx-auto">
   <div class="text-center mb-8">
     <h1 class="text-3xl font-bold text-yellow-400">今日の一本はこれ！</h1>
+    <% if @params.values.any?(&:present?) %>
+      <div class="flex flex-wrap gap-2 justify-center mt-3">
+        <% if @params[:classification].present? %>
+          <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">分類：<%= @params[:classification] %></span>
+        <% end %>
+        <% if @params[:category].present? %>
+          <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">カテゴリ：<%= @params[:category] %></span>
+        <% end %>
+        <% if @params[:mood].present? %>
+          <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">気分：<%= @params[:mood] %></span>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <% if @movie %>
